@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rainbow Serach</title>
+    <!-- <link href="./css/reset.css" rel="stylesheet"> -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="welcome">Welcome Rainbow</div>
+    <!-- 遮罩层 -->
+    <div class="mask">
+        <div id="General-settings" class="setting-item">
+            <h2>
+                <span>常规设置</span>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </h2>
+            <h3>搜索</h3>
+            <div>
+                <li>
+                    <span>自动清空搜索栏</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle" toggle-input></i>
+                </li>
+                <li>
+                    <span>搜索历史记录</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+                <li>
+                    <span>快捷键设置</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+            </div>
+            <h3>导航</h3>
+            <div>
+                <li>
+                    <span>在新页面打开搜索结果</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle" toggle-open></i>
+                </li>
+                <li>
+                    <span>使用数字键0 ~ 9打开前十个网站捷径</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+                <li>
+                    <span>在每行显示更多网站捷径</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+            </div>
+        </div>
+        <div id="Search-preferences" class="setting-item">
+            <h2>
+                <span>搜索引擎偏好</span>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </h2>
+            <h3>主搜索引擎</h3>
+            <div>
+                <li id="search-engine">
+                    <span>百度 -- https://www.baidu.com/s?ie=utf-8&word=</span>
+                    <i class="fa fa-check checkHidden fa-lg"></i>
+                </li>
+                <li id="search-engine">
+                    <span>必应 -- https://cn.bing.com/search?q=</span>
+                    <i class="fa fa-check checkAppear fa-lg"></i>
+                </li>
+                <li id="search-engine">
+                    <span>谷歌 -- https://www.google.com/search?q=</span>
+                    <i class="fa fa-check checkHidden fa-lg"></i>
+                </li>
+            </div>
+            <h3>次搜索引擎</h3>
+            <div>
+                <li id="search-engine">
+                    <span>Yandex -- https://yandex.com/search/?text=</span>
+                    <i class="fa fa-check checkHidden fa-lg"></i>
+                </li>
+                <li id="search-engine">
+                    <span>Magi -- https://magi.com/search?q=</span>
+                    <i class="fa fa-check checkHidden fa-lg"></i>
+                </li>
+                <li id="search-engine">
+                    <span>搜狗 -- https://www.sogou.com/web?query=</span>
+                    <i class="fa fa-check checkHidden fa-lg"></i>
+                </li>
+            </div>
+        </div>
+        <div id="appearance-settings" class="setting-item">
+            <h2>
+                <span>个性化</span>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </h2>
+            <h3>图片背景</h3>
+            <div>
+                <li>
+                    <span>每日推荐</span>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <span>自定义</span>
+                    <button>上传</button>
+                </li>
+            </div>
+            <h3>主题颜色</h3>
+            <div>
+                <li>
+                    <span>深色模式</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+                <!-- <li>
+                    <span>主题颜色</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li> -->
+                <li>
+                    <span>字体风格</span>
+                    <i class="fa fa-toggle-off fa-lg" id="toggle"></i>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    <!-- 设置图标 -->
+    <div class="setting">
+        <i class="fa fa-gear fa-lg"></i>
+    </div>
+
+    <!-- 菜单 -->
+    <div class="menu">
+        <li class="subkey" id="general"><span>常规设置</span></li>
+        <li class="subkey" id="preferences"><span>搜索引擎偏好</span></li>
+        <li class="subkey" id="appearance"><span>个性化</span></li>
+    </div>
+
+    <!-- 天气 -->
+    <div class="weatherArea">
+        <li class="weather"></li>
+        <li class="temperature"></li>
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">Rainbow Search</h1>
+
+    <!-- 时钟 -->
+    <h1 class="dateArea"></h1>
+
+    <!-- 搜索框 -->
+    <div class="search-box">
+        <input class="search-txt" type="text" placeholder="Type to search" />
+        <i class="fa fa-times clear"></i>
+        <a class="search-btn" href="#">
+            <i class="fa fa-search"></i>
+        </a>
+    </div>
+
+    <!-- Add Link -->
+    <div class="setLink">
+        <h5>添加链接</h5>
+        <input type="text" placeholder="网址" class="link-url">
+        <input type="text" placeholder="标题" class="link-title">
+        <button class="submit-link">添加</button>
+    </div>
+
+    <!-- Quick Link -->
+    <div class="quick-link">
+        <!-- <h5>Links</h5> -->
+        <a href="https://www.twitch.tv/" class="link-item" target="_blank">
+            <li class="link-icon">
+                <i class="fa-regular fa-trash-can"></i>
+                <span>T</span>
+            </li>
+            <li class="link-name">Twitch</li>
+        </a>
+        <a href="https://github.com/" class="link-item" target="_blank">
+            <li class="link-icon">
+                <i class="fa-regular fa-trash-can"></i>
+                <span>G</span>
+            </li>
+            <li class="link-name">GitHub</li>
+        </a>
+        <a href="https://www.bilibili.com/" class="link-item" target="_blank">
+            <li class="link-icon">
+                <i class="fa-regular fa-trash-can"></i>
+                <span>B</span>
+            </li>
+            <li class="link-name">Bilibili</li>
+        </a>
+
+        <i class="fa fa-plus-circle fa-2x addLink"></i>
+    </div>
+
+    <!-- 随机诗词 -->
+    <div class="randomPoetry"></div>
+
+    <!-- Todo List -->
+    <div class="todo-list">
+        <h2 class="todo-title">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            Todo List
+        </h2>
+        <ul class="list">
+            <span class="Blank-prompt">
+                今天要做什么呢？
+                <i class="far fa-grin-beam"></i>
+            </span>
+        </ul>
+        <input type="text" , placeholder="添加任务" id="todo-input">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <i class="fa fa-copyright"></i>
+        Rainbow 2023 All rights reserved
+    </footer>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/main.js" type="module"></script>
+<script src="./js/api.js"></script>
+<!-- <script src="./js/settings.js"></script> -->
+
+</html>
