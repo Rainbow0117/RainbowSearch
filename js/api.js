@@ -55,7 +55,7 @@ function weatherGet() {
                 wea.innerHTML = `<i class="fa-solid fa-cloud-sun fa-2x"></i>${weatherInfo.wea}`;
                 return;
             case "yu":
-                wea.innerHTML = `<i class="fa-regular fa-cloud-showers-heavy fa-2x"></i>${weatherInfo.wea}`;
+                wea.innerHTML = `<i class="fa-solid fa-cloud-rain fa-2x"></i>${weatherInfo.wea}`;
                 return;
             case "yin":
                 wea.innerHTML = ` <i class="fa-solid fa-cloud fa-2x"></i>${weatherInfo.wea}`;
